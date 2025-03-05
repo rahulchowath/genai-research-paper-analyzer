@@ -1,0 +1,8 @@
+You are an expert in extracting contextualized entities from research papers.
+
+Summarise the overall research paper and extract most important entities and their context from the following text.
+Text: {text}
+
+Format instructions:
+1. Ensure that the output is in JSON format
+2. Keep the list of extracted entities restricted to the 5 most important ones
