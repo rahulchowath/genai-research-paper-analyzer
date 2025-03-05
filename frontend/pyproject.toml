@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "frontend"
+version = "0.1.0"
+description = "Repository for a GenAI frontend"
+authors = []
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+gradio = ">=5.5.0"
+google-auth = ">2.30.0"

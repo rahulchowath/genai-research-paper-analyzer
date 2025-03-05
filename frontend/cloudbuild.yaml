@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker pull ${_IMAGE_URI} || exit 0']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+            'build',
+            '-t', '${_IMAGE_URI}',
+            '--cache-from', '${_IMAGE_URI}',
+            '.'
+        ]
+images: ['${_IMAGE_URI}']
+substitutions:
+  _IMAGE_URI: '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/docker-repository/frontend:latest'
+options:
+  dynamic_substitutions: true
